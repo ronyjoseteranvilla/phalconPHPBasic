@@ -10,7 +10,7 @@ define('BASE_PATH', dirnmae(__DIR__));
 define('APP_PATH', BASE_PATH. '/app');
 
 
-$loader new Loader();
+$loader = new Loader();
 
 $loader->registerDirs(
     [

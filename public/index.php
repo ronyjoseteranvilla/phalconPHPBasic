@@ -14,7 +14,9 @@ use Phalcon\Mvc\Dispatcher;
 define('BASE_PATH', dirname(__DIR__));
 define('APP_PATH', BASE_PATH. '/app');
 
-
+var_dump(APP_PATH.'/controllers/');
+var_dump(file_exists(APP_PATH.'/controllers/'));
+var_dump(is_dir(APP_PATH.'/controllers/'));
 $loader = new Loader();
 
 $loader->registerDirs(

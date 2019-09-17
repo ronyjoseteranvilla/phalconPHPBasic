@@ -35,7 +35,7 @@ $loader->register();
 
 //$di = new FactoryDefault();
 $di = new Di();
-$di->set("router", Router::class);
+//$di->set("router", Router::class);
 
 $di->set(
     'dispatcher',
@@ -51,9 +51,9 @@ $di->set(
 );
 
 // Registering a Http\Response
-$di->set("response", Response::class);
+//$di->set("response", Response::class);
 // Registering a Http\Request
-$di->set("request", Request::class);
+//$di->set("request", Request::class);
 
 
 $di->set(

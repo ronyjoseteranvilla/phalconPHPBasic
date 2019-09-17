@@ -7,6 +7,8 @@ use Phalcon\Mvc\View;
 use Phalcon\Mvc\Url as UrlProvider;
 use Phalcon\Mvc\Router;
 use Phalcon\Mvc\Application;
+use Phalcon\Http\Request;
+use Phalcon\Http\Response;
 use Phalcon\Mvc\Dispatcher;
 
 define('BASE_PATH', dirname(__DIR__));
@@ -47,6 +49,12 @@ $di->set(
         return $dispatcher;
     }
 );
+
+// Registering a Http\Response
+$di->set("response", Response::class);
+// Registering a Http\Request
+$di->set("request", Request::class);
+
 
 $di->set(
     'view',

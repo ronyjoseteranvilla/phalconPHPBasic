@@ -1,7 +1,8 @@
 <?php
 
 use Phalcon\Loader;
-use Phalcon\Di\FactoryDefault;
+//use Phalcon\Di\FactoryDefault;
+use Phalcon\Di;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\Url as UrlProvider;
 use Phalcon\Mvc\Router;
@@ -30,7 +31,9 @@ $loader->registerNamespaces(
 $loader->register();
 
 
-$di = new FactoryDefault();
+//$di = new FactoryDefault();
+$di = new Di();
+$di->set("router", Router::class);
 
 $di->set(
     'dispatcher',
@@ -53,7 +56,7 @@ $di->set(
         return $view;
     }
 );
-
+/*
 $di->set(
     'url',
     function () {
@@ -62,11 +65,12 @@ $di->set(
         return $url;
     }
 );
+*/
 
-$application = new Application($di);
 
 try {
     // Handle the request
+    $application = new Application($di);
     $response = $application->handle();
     $response->send();
 } catch (\Exception $e) {

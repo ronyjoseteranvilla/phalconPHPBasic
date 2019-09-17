@@ -45,7 +45,7 @@ $di->set(
         $dispatcher = new Dispatcher();
 
         $dispatcher->setDefaultNamespace(
-            'Linkfire\Assignment\Controllers'
+            'Linkfire\Assignment\controllers'
         );
 
         return $dispatcher;
